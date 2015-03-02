@@ -1,7 +1,8 @@
 class Kitten < ActiveRecord::Base
 
+has_many :categorizations
 has_many :categories, through: 
-:categorization
+:categorizations
 
   validates :image, presence: true
 

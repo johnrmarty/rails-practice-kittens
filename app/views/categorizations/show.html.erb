@@ -9,16 +9,16 @@
 
 <h1></h1>
 
-<%= form_for @categorization do |f| %>
+<%= form_for [@kitten, @categorization] do |f| %>
 
 
 <p>
 
 <%= f.label :category_id %>
-    <em><%=f.collection_select(:category_id, Category.all, :id, :name,{include_blank:"Select category"}) %></em> 
+    <em><%=f.collection_select(:category_id, Category.all.order('name ASC'), :id, :name,{include_blank:"Select category"}) %></em> 
 </p>
 
-
+name ASC
 
   <%= f.submit 'Category' %>
 
